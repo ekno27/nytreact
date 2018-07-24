@@ -9,12 +9,36 @@ class Saved extends React.Component{
     state = {
         articles: []
     }
-    componentDidMount(){
-        
-
+    
+    dbCall = ()=>{
         axios.get("/api/articles").then(res=>{
             this.setState({articles:res.data})
         });
+
+    }
+    deleteItem = (deleteId)=>{
+        console.log("i am going to be deleted");
+      
+        console.log(deleteId);
+        axios.delete("/api/articles", {data: {
+            id:deleteId
+         }}).then(()=>{
+            console.log("deleted!");
+            alert("Item was deleted!");
+            this.dbCall();
+            
+        }).catch(err=>{
+            console.log(err);
+        });
+
+
+    }
+    
+    componentDidMount(){
+
+        this.dbCall();
+        
+       
 
     }
 
@@ -26,7 +50,7 @@ class Saved extends React.Component{
 
                 <h2 className="center-align"> Saved Articles</h2>
                 {this.state.articles.map((item, key)=>{
-                    return( <SavedArticle title={item.title}
+                    return( <SavedArticle delete={this.deleteItem} title={item.title}
                         date={item.date}
                         id={item._id}
                         key={key}
