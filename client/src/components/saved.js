@@ -24,7 +24,6 @@ class Saved extends React.Component{
             id:deleteId
          }}).then(()=>{
             console.log("deleted!");
-            alert("Item was deleted!");
             this.dbCall();
             
         }).catch(err=>{
