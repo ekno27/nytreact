@@ -8,7 +8,9 @@ const Article = (props)=>{
             title:props.headline,
             date:props.pub_date,
             url: props.url
-        }).then(()=>{console.log("Data has been added!")});
+        }).then(()=>{console.log("Data has been added!");
+        alert("Article has been saved!");
+    });
     
     }
     

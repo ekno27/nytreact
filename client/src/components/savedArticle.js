@@ -10,7 +10,7 @@ const SavedArticle = (props)=>{
     console.log(props);
     return(
         <div>
-            <h4>{props.name}</h4>
+            <h4>{props.title}</h4>
             <h5>{props.date}</h5>
             <a href={props.url}  className="btn waves-effect waves-light btn-small center-align valign-wrapper" target="_blank">Link to article </a>
         </div>

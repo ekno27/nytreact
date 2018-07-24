@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import SavedArticle from "./savedArticle";
+import Search from "./search";
+import { Link, Route } from "react-router-dom";
 
 
 class Saved extends React.Component{
@@ -17,7 +19,7 @@ class Saved extends React.Component{
     }
 
     render(){
-        console.log(this.state.articles);
+       
         return(
 
             <div>
@@ -30,6 +32,9 @@ class Saved extends React.Component{
                         key={key}
                         url={item.url}/>)  
                 })}
+                
+                <Link to="/" role="a" className= "btn waves-effect waves-light btn-large center-align valign-wrapper"> Search for more articles</Link>
+                <Route exact path={`/`} component={Search} />
             </div>
         );
     }
