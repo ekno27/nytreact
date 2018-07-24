@@ -10,7 +10,7 @@ const Results = (props) =>{
     return(
         
         <div>
-            <h2 className="center-align">hey this is the results part</h2>
+          
             {items}
         </div>
         );

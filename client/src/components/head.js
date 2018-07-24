@@ -1,15 +1,15 @@
 import React from "react";
 
-const Head=(props)=>{
+const Head=()=>{
 
       
         return(
             <div>
-                <h1 className="center-align">NYT Article Scrubber </h1>
+                <h1 className="header">NYT Article Scrubber </h1>
+
+                <hr/>
             </div>
         );
-    
 };
-
 
 export default Head;
