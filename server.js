@@ -2,7 +2,9 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
+const mongoose = require("mongoose");
 const app = express();
+
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,13 +15,17 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-
+const routes = require("./routes/nytRoutes.js");
+app.use(routes);
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+//mongo connection
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/nytreact");
+
 app.listen(PORT, () => {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+  console.log(`Server now on port ${PORT}!`);
 });
