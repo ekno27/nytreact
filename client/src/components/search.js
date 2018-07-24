@@ -18,7 +18,7 @@ class Search extends React.Component{
     console.log("i am clicked");
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     //adding necessary elements
-    queryURL += '?' + "api-key=9bad9faf5c784cbcbb0689c2b9df8070" + "&q="+this.state.articleName.replace(" ", "%20");
+    queryURL +=  "?api-key=9bad9faf5c784cbcbb0689c2b9df8070&q="+this.state.articleName.replace(" ", "%20");
   
     axios.get(queryURL).then(res=>{
         console.log(res.data.response.docs);
@@ -71,7 +71,7 @@ class Search extends React.Component{
 
       <a onClick={this.click}  className= "btn waves-effect waves-light btn-large center-align valign-wrapper" >Submit</a>
       
-      <Link to="/saved" role="a" className= "btn waves-effect waves-light btn-large center-align valign-wrapper"> See Saved Articles</Link>
+      <Link to="/saved" role="button" className= "btn waves-effect waves-light btn-large center-align valign-wrapper"> See Saved Articles</Link>
       
       
       <Results items={this.state.articles}></Results>

@@ -33,7 +33,7 @@ class Saved extends React.Component{
                         url={item.url}/>)  
                 })}
                 
-                <Link to="/" role="a" className= "btn waves-effect waves-light btn-large center-align valign-wrapper"> Search for more articles</Link>
+                <Link to="/" role="button" className= "btn waves-effect waves-light btn-large center-align valign-wrapper"> Search for more articles</Link>
                 <Route exact path={`/`} component={Search} />
             </div>
         );
