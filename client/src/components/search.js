@@ -57,17 +57,7 @@ class Search extends React.Component{
        
         </div>
       </div>
-      <div className="row">
-        <div className="input-field col s12">
-          <input onChange={this.handleStartDate} id="startDate" placeholder="Start date" type="text" className="validate"/>
-         
-        </div>
-      </div>
-      <div className="row">
-        <div className="input-field col s12">
-          <input onChange={this.handleEndDate} id="endDate" type="text" className="validate" placeholder="End Date"/>
-        </div>
-      </div>
+     
 
       <a onClick={this.click}  className= "btn waves-effect waves-light btn-large center-align valign-wrapper" >Submit</a>
       
