@@ -22,11 +22,14 @@ const SavedArticle = (props)=>{
     
     return(
         <div>
-            <h4>{props.title}</h4>
-            <h5>{props.date}</h5>
-            <a href={props.url}  className="btn waves-effect waves-light btn-small center-align valign-wrapper" target="_blank">Link to article </a>
-            <a onClick={()=>{props.delete(props.id)}} className="btn waves-effect waves-light btn-small center-align valign-wrapper" target="_blank">delete Article </a>
-
+            <li className="collection-item avatar">
+                    <span className="title"><h5>{props.title}</h5></span>
+                    <a href={props.url}  target="_blank"><h6>Link to article </h6></a>
+                    
+                   
+                    <a href="#!" onClick={()=>{props.delete(props.id)}} className="secondary-content"><i className="  small material-icons">delete</i></a>
+                </li>
+        
         </div>
     )
 }

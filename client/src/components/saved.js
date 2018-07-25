@@ -43,20 +43,29 @@ class Saved extends React.Component{
 
     render(){
        
+
+
         return(
 
             <div>
 
                 <h2 className="center-align"> Saved Articles</h2>
+                <ul className="collection">
                 {this.state.articles.map((item, key)=>{
-                    return( <SavedArticle delete={this.deleteItem} title={item.title}
+                    return(
+                        <SavedArticle delete={this.deleteItem} title={item.title}
                         date={item.date}
                         id={item._id}
                         key={key}
-                        url={item.url}/>)  
+                        url={item.url}/>
+                     )  
                 })}
                 
-                <Link to="/" role="button" className= "btn waves-effect waves-light btn-large center-align valign-wrapper"> Search for more articles</Link>
+                </ul>
+               
+                
+                
+                <Link to="/" role="button" id="search-more" className= "  btn waves-effect waves-light btn-large center-align valign-wrapper center-align"> Search for more articles</Link>
                 <Route exact path={`/`} component={Search} />
             </div>
         );

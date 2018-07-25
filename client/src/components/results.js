@@ -10,8 +10,9 @@ const Results = (props) =>{
     return(
         
         <div>
-          
+            <ul className="collection">
             {items}
+            </ul>
         </div>
         );
 

@@ -14,12 +14,13 @@ const Article = (props)=>{
     
     }
     
-    return(<div>
-        <h5>{props.headline}  <a className="btn waves-effect waves-light btn-small center-align valign-wrapper" onClick={this.save}> Save </a></h5>
+    return(
+        <li className="collection-item"><div>{props.headline} <a className="secondary-content "href="#" onClick={this.save}><i className="material-icons">save</i>  </a></div></li>
+    
         
        
 
-    </div>);
+    );
     
 
 }

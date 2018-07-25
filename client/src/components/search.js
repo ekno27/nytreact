@@ -23,6 +23,7 @@ class Search extends React.Component{
     axios.get(queryURL).then(res=>{
         console.log(res.data.response.docs);
         this.setState({articles: res.data.response.docs});
+        this.setState({articleName: ""});
 
     
       }).catch(err =>{
@@ -65,9 +66,16 @@ class Search extends React.Component{
 
             <br/>
             <br/>
+
+            
+
+                <Results items={this.state.articles}></Results>
+       
+      
+              
         
         
-            <Results items={this.state.articles}></Results>
+          
 
             <Route exact path={`/saved`} component={Saved} />
            
